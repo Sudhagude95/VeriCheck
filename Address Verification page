@@ -1,0 +1,36 @@
+<!-- Input field for wallet address -->
+<label for="Confirm wallet-address">Confirm Wallet Address:</label>
+<input type="text" id="wallet-address" name="wallet-address">
+
+<!-- Input field for associated email ID -->
+<label for="associated-email">Associated Email:</label>
+<input type="text" id="associated-email" name="associated-email" readonly>
+
+<!-- JavaScript code -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to the wallet address input field
+    document.getElementById('wallet-address').addEventListener('input', function(event) {
+        // Get the wallet address entered by the user
+        var walletAddress = event.target.value;
+
+        // Switch case to find associated email for the wallet address
+        var associatedEmail;
+        switch (walletAddress) {
+            case '1KsrHGhXyW49Hm6bKwo2NLvxy3kY6bssug':
+                associatedEmail = 'sudhagude.uk@gmail.com';
+                break;
+            case '1KJAQuvNbAWaTzTrSeK1SjWqSsyHGHQN3q':
+                associatedEmail = 'sudhalahari.pt@gmail.com';
+                break;
+            // Add more cases as needed
+            default:
+                associatedEmail = 'Email not found';
+                break;
+        }
+
+        // Populate the associated email field
+        document.getElementById('associated-email').value = associatedEmail;
+    });
+});
+</script>
